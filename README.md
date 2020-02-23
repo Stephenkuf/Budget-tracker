@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # budget-track
 
 ## Project setup
@@ -27,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# Budget-tracker
+budget tracking application for keeping tracks of budgets in organisations 
+>>>>>>> 95abec86ae716f4e4ef4f3d71c0edd5ddf0e1e48
