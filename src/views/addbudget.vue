@@ -3,7 +3,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-d-purple static-top">
 
-     <router-link to='/home'> <a class="navbar-brand mr-1" href="index.html">Budget Tracker</a></router-link>
+     <router-link to='/adminHome'> <a class="navbar-brand mr-1" href="index.html">Budget Tracker</a></router-link>
 
     <button class="btn btn-link text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="mdi mdi-segment"></i>
@@ -175,7 +175,7 @@
               </table>
             </div>
           </div>
-          <router-link to="/budgetSingle" > <button>view single </button> </router-link>
+          <router-link to="/budgetSingle" > <button> </button> </router-link>
         </div>
 
       </div>

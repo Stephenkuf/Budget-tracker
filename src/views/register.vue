@@ -100,6 +100,10 @@
 export default {
   data:function(){
     return{
+      headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    },
 
 
       error:{
@@ -201,7 +205,7 @@ export default {
          }
         else{
           // alert('this works')
-            axios.post('https://budget-tracking-system.azurewebsites.net/api/Users/register', this.user)
+            axios.post('https://budget-tracking-system.azurewebsites.net/api/Users/register', this.user, this.headers)
           .then(function (response) {
             // handle success
           //      this.users = res.data;

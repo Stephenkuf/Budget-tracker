@@ -52,8 +52,8 @@
         </a>
         <div class="" v-if="isDropdown" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Budgets Details</h6>
-          <a class="dropdown-item" href="addbudget.html">Add Budget</a>
-          <a class="dropdown-item" href="budgets.html">Details</a>
+         <router-link to="/add" > <a class="dropdown-item" href="">Add Budget</a></router-link>
+          <router-link to="/all"><a class="dropdown-item" href="#">Budgets</a></router-link>
         </div>
       </li>
     </ul>
