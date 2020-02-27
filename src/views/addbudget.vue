@@ -31,28 +31,30 @@
   </nav>
 
   <div id="wrapper">
+    
 
     <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
+     <ul class="sidebar navbar-nav">
       <li class="nav-item active mt-5">
-       <router-link to='/home' >
+        <router-link to='/adminHome' >
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
-      </router-link>
+         </router-link>
       </li>
       <li class="nav-item dropdown"
-           @click = "isDropdown = !isDropdown"  
-      >
+           @click = "isDropdown = !isDropdown" >
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
           <span>Budgets</span>
         </a>
         <div class="" v-if="isDropdown" aria-labelledby="pagesDropdown">
-          <router-link to="/all" ><a class="dropdown-item text-white" href="#">View Budgets</a></router-link>
+          <h6 class="dropdown-header">Budgets Details</h6>
+         <router-link to="/add" > <a class="dropdown-item" href="">Add Budget</a></router-link>
+          <router-link to="/all"><a class="dropdown-item" href="#">Budgets</a></router-link>
         </div>
-      </li> 
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -63,11 +65,10 @@
 
 
         <!-- ADD BUDGET FORM -->
-        <div class="row ">
-          
-          <div class="col-6 add-budget my-4">
+        <div class="row ">          
+          <div class="col-12 sm-12 md-12 add-budget my-4">
             <div class="card">
-              <div class="card-header text-uppercase">Add A Budget</div>
+             <b><div class="text-center card-header text-uppercase">Add A Budget</div></b> 
 
               <form @submit.prevent="addItem">                
                 <div class="field-toAdd my-2">
@@ -99,7 +100,7 @@
                 </div>
   
                 <div class="">
-                  <button type="submit" class="btn btn-sm btn-budget my-2">ADD ITEM</button>
+                 <b><button type="submit" class="btn btn-sm btn-budget my-2">ADD ITEM</button></b> 
                 </div>
                  <!-- <div class="">
                   <button type="submit" class="btn btn-sm btn-budget my-2">Submit Budget</button>
@@ -108,22 +109,24 @@
             </div>
           </div>
           <!-- end of first half of add budget view -->
-          <div class="col-6">
-              <div style="padding:40px" class="card-header text-center text-uppercase">ITEMS ADDED </div>
-           <table id="customers">
-            <tr>
-              <th>TITLES</th>
-              <th>UNITS</th>
-              <th>PRICES</th>
-            </tr>
-            <tr v-for="item in budget.items" :key="item">
-              <td>{{item.title}}</td>
-              <td>{{item.units}}</td>
-              <td>{{item.price}}</td>
-            </tr>
-           
-          </table>
-           <div @click="submitBudget" class="btn btn-budget float-right text-uppercase mt-2">submit budget</div>
+          <div class="col-12 sm-12 md-12 add-budget my-4">
+            <div class="card">
+            <b><div style="padding:20px" class="card-header text-center text-uppercase">ITEMS ADDED </div></b> 
+            <table id="customers">
+              <tr>
+                <th>TITLES</th>
+                <th>UNITS</th>
+                <th>PRICES</th>
+              </tr>
+              <tr v-for="item in budget.items" :key="item">
+                <td>{{item.title}}</td>
+                <td>{{item.units}}</td>
+                <td>{{item.price}}</td>
+              </tr>
+            
+            </table>
+            <div @click="submitBudget" class="btn btn-budget float-right text-uppercase mt-2">submit budget</div>
+            </div>
           </div>
           
         </div>
@@ -197,14 +200,14 @@
   <!-- /#wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
+  <!-- <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
+  </a> -->
   </div>
 </template>
 
 <script>
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 
 export default {
@@ -217,9 +220,9 @@ export default {
         budget:{
           id:'',
           user:'',
-          faculty:'',
-          department:'',
-          budgetYear:'',
+          faculty:'Sciences',
+          department:'Computer Science',
+          budgetYear:'2020',
           items:[],
           status:'pending'
 
@@ -254,11 +257,11 @@ export default {
                     
                 // :
                 obj = {
-                                  // id:docId,
-                                  title:this.title,
-                                  units:this.units,
-                                  price:this.price
-                            } ;
+                      // id:docId,
+                      title:this.title,
+                      units:this.units,
+                      price:this.price
+                  } ;
 
 
               this.budget.items.push(obj);
@@ -268,7 +271,7 @@ export default {
         },
         submitBudget(){
           if(this.budget.items.length > 0){
-            swal("Good job!", "Budget Submitted!", "success");
+            // swal("Good job!", "Budget Submitted!", "success");
 
            this.$store.dispatch('addBudget',this.budget)
           }

@@ -143,7 +143,6 @@
                         
                         <!-- <i class="fa fa-check text-success" aria-hidden="true" style="font-size: 1rem;"></i>
                         <span class="mx-1"> (Approved) </span> -->
-
                         <i class="fas fa-sync text-default"></i>
                         <span class="mx-1"> (Pending) </span>
                       </div>
@@ -151,7 +150,7 @@
                   </tr>
                   
 
-  <tr  v-for="budget in budgets" :key="budget">
+               <tr v-for="budget in budgets" :key="budget">
                     <td>{{budget.id}}</td>
                     <td>{{budget.budgetYear}}</td>
                     <td>{{budget.department}}</td>
@@ -228,7 +227,9 @@ export default {
            newBudgets:0,
            user:{
                name:'Adebola'
-           }
+           },
+           budgets:this.$store.getters.budgets
+
         }
     }
 

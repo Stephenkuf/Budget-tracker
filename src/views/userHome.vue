@@ -207,8 +207,8 @@ export default {
        isDropdown:  false,    
       budgetsPassed:0,
       newBudgets:this.$store.getters.budgetsNo,
-      faculties:0,
-      departments:0,
+      faculties:2,
+      departments:3,
       info: null,
       budgets: this.$store.getters.budgets
       

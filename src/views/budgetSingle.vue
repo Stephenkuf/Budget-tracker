@@ -16,11 +16,11 @@
       <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="text-white hidden-xs">Editor </span>
+            <span class="text-white hidden-xs">Auditor </span>
             <!-- <img src="../img/undraw_coding.png" class="user-profile"/> -->
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="!#">Editor</a>
+            <a class="dropdown-item" href="!#">Auditor</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="mdi mdi-logout" style="display: inline-block;"></i> Logout</a>
           </div>
@@ -143,7 +143,8 @@
 </template>
 
 <script>
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
+
 
 export default {
   data:function(){
@@ -156,11 +157,14 @@ export default {
   methods:{
     approved(){
       this.budget.status = 'approved'
-      swal("Done!", "Budget Approved!", "success")
+      alert('budget has been approved')
+      // swal("Done!", "Budget Approved!", "success")
+
     },
     rejected(){
-      // this.budget.status = 'approved'
-      swal("Done!", "Budget rejected!", "failure")
+      this.budget.status = 'rejected'
+      alert('budget has been Rejected')
+      // swal("Done!", "Budget rejected!", "failure")
 
     }
                 // swal("Good job!", "Budget Submitted!", "success");

@@ -16,16 +16,15 @@
       <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="text-white hidden-xs">Editor </span>
-            <!-- <img src="../img/undraw_coding.png" class="user-profile"/> -->
+=            <!-- <img src="../img/undraw_coding.png" class="user-profile"/> -->
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="!#">Editor</a>
+            <a class="dropdown-item" href="!#">Auditor</a>
             <div class="dropdown-divider"></div>
           </div>
         </li>
         <li>
-        <router-link to="/login"> <button class="btn btn-danger btn-small">Logout </button></router-link>
+        <router-link to="/login"> <button class="btn btn-danger btn-small">Logout</button></router-link>
         </li>
       </ul>
    </div>

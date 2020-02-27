@@ -25,10 +25,18 @@ export default new Vuex.Store({
                 department:'psychology', 
                 budgetYear:1930,
                 items:[
-                  { title:'Pizzard',
+                  { title:'Markers',
                     units:23,
                     price:122500
-                  }
+                  },
+                  { title:'roofing sheets',
+                  units:23,
+                  price:400500
+                },
+                { title:'Gasoline',
+                  units:23,
+                  price:4500
+              }
                 ],
                 status:'pending'
               },
@@ -39,10 +47,14 @@ export default new Vuex.Store({
                 department:'chemistry', 
                 budgetYear:1930,
                 items:[
-                  { title:'Sharwarms',
+                  { title:'electricity',
                     units:23,
                     price:100
-                  }
+                  },
+                  { title:'hall maintanance',
+                  units:0,
+                  price:100000
+                }
                 ],
                 status:'pending'
               },
@@ -53,10 +65,14 @@ export default new Vuex.Store({
                 department:'Law', 
                 budgetYear:1930,
                 items:[
-                  { title:'Rolls royce',
+                  { title:'New painting',
                     units:2,
-                    price:230000000
-                  }
+                    price:230000
+                  }, 
+                  { title:'renovations',
+                  units:0,
+                  price:78300
+                }
                 ],
                 status:'approved'
               }

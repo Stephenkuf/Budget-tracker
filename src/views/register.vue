@@ -100,10 +100,10 @@
 export default {
   data:function(){
     return{
-      headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-    },
+    //   headers: {
+    //   'Access-Control-Allow-Origin': '*',
+    //   'Content-Type': 'application/json',
+    // },
 
 
       error:{
@@ -116,7 +116,7 @@ export default {
         // passMatch:false
       },
       user: {
-          "id": 0,
+          "id":0,
           "firstName": "",
           "lastName":"",
           "email":"",
@@ -204,14 +204,46 @@ export default {
           }
          }
         else{
-          // alert('this works')
-            axios.post('https://budget-tracking-system.azurewebsites.net/api/Users/register', this.user, this.headers)
-          .then(function (response) {
-            // handle success
-          //      this.users = res.data;
-                   console.log(response);
-          })
+          //   {
+          //   // GET /someUrl
+          //   this.$http.post('https://budget-tracking-system.azurewebsites.net/api/Users/register', this.user , 
+          //        {
+          //             headers: {
+          //                 mode:'cors'
+          //             }
+          //         }         )
+          //         .then(response => {
+          //     // success callback
+          //     console.log(response)
+          //   }, response => {
+          //     // error callback
+          //   });
+          // }
 
+          // Example POST method implementation:
+            async function postData(url = '', data = {}) {
+              // Default options are marked with *
+              const response = await fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'no-cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                  'Content-Type': 'application.json'
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                
+                redirect: 'follow', // manual, *follow, error
+                referrerPolicy: 'no-referrer', // no-referrer, *client
+                body: JSON.stringify(data) // body data type must match "Content-Type" header
+              });
+              return await response.json(); // parses JSON response into native JavaScript objects
+            }
+
+            postData('https://budget-tracking-system.azurewebsites.net/api/Users/register', this.user )
+              .then((data) => {
+                console.log(data); // JSON data parsed by `response.json()` call
+              });
         }
       },
     

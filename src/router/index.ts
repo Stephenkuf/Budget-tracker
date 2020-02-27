@@ -4,6 +4,7 @@ import  userHome from '../views/userHome.vue'
 import  adminHome from '../views/adminHome.vue'
 import register from '../views/register.vue'
 import login from '../views/login.vue'
+import login2 from '../views/login2.vue'
 import singleBudget from '../views/budgetSingle.vue'
 import addBudget from '../views/addbudget.vue'
 import allBudgets from '../views/allBudgets.vue'
@@ -16,6 +17,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login
+
+  },
+  {
+    path: '/login2',
+    name: 'login2',
+    component: login2
 
   },
   {

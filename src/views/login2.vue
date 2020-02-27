@@ -11,7 +11,6 @@
               <label for="inputEmail">ID</label>
             </div>
           <span v-if="error.email" class="text-danger">ID is required!</span>
-
           </div>
           <div class="form-group">
             <div class="form-label-group">
@@ -19,12 +18,12 @@
               <label for="inputPassword">Password</label>
             </div>
            <span v-if="error.password" class="text-danger">Password is required!</span>
-          <span v-if="error.cred" class="text-danger">Username or password is wrong</span>
+           <span v-if="error.cred" class="text-danger">Username or password are wrong!</span>
 
           </div>
           <!-- <div class="form-group">
             <div class="checkbox">
-              <label>e
+              <label>
                 <input type="checkbox" value="remember-me">
                 <span class="checkbox-label">Remember Password</span>
               </label>
@@ -59,9 +58,8 @@ export default {
     }
   },
   methods :{
-       validate(){
-    
-        if(this.user.email === "" || this.user.password === ""  ){
+       validate(){    
+        if(this.user.email === "" || this.user.password === ""){
           if (this.user.email === ""){
             this.error.email= true;
           }
@@ -71,8 +69,8 @@ export default {
         }
         else{
 
-          if (this.user.email === 'johnson' && this.user.password === 'johnson' ||this.user.email === 'tosin' && this.user.password === 'tosin'){
-                        this.$router.replace("/home")
+          if (this.user.email == 'adebola' && this.user.password === 'adebola' ||this.user.email === 'adams' && this.user.password === 'adams'){
+                 this.$router.replace("/adminHome")
           }else{
                 this.error.cred = true;
           }
